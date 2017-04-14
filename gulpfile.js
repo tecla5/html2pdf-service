@@ -4,11 +4,12 @@ var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
- dest: 'dist'
+ src: 'src/**/*.js',
+ dest: 'build'
 }
 
 gulp.task('build', function () {
- return gulp.src('src/**/*.js')
+ return gulp.src(paths.src)
    .pipe(sourcemaps.init())
    .pipe(babel())
    .pipe(sourcemaps.write('.'))
@@ -26,7 +27,7 @@ gulp.task('start', function () {
 
 gulp.task('watch', function () {
  livereload.listen();
- gulp.watch('src/*.js', ['start']);
+ gulp.watch(paths.src, ['start']);
 });
 
 gulp.task('watch:b', function () {

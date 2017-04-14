@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
-    "watch": "gulp watch",
-    "start": "node index.js"
+    "start": "node src/index.js",
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +20,28 @@
     "gulp-babel": "^6.1.2",
     "gulp-livereload": "^3.8.1",
     "gulp-sourcemaps": "^2.4.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.js",
+      "!**/not-this-file.js"
+    ],
+    "match": [
+      "*App",
+      "!foo"
+    ],
+    "source": [
+      "src/**/*.{js}",
+      "!build/**/*"
+    ],
+    "concurrency": 1,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   }
 }
