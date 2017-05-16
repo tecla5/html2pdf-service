@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Web service endpoint for html2pdf",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Kristian Mandrup",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-stream": "^0.8.0",
+    "hemera": "^0.0.5",
+    "hemera-joi": "^1.0.5",
+    "nats-hemera": "^1.2.3"
+  }
+}

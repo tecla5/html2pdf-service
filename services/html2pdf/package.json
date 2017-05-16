@@ -9,14 +9,17 @@
     "build": "gulp build",
     "watch": "gulp watch"
   },
-  "author": "JavierCabrera <cabrerajavier@gmail.com>, Kristian Mandrup <kmandrup@gmail.com>",
+  "author": "JavierCabrera <cabrerajavier@gmail.com>",
+  "contributors": [
+    "Kristian Mandrup <kmandrup@gmail.com>"
+  ],
   "license": "ISC",
   "dependencies": {
     "hemera-joi": "^0.1.78",
     "hemera-zipkin": "^0.3.2",
     "nats": "^0.7.4",
     "nats-hemera": "^0.8.1",
-    "yamljs": "^0.2.9"
+    "wkhtmltopdf": "^0.3.4"
   },
   "devDependencies": {
     "ava": "^0.19.0",

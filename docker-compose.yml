@@ -29,9 +29,9 @@ services:
       API_HOST: 0.0.0.0
       HEMERA_LOG_LEVEL: silent
 
-  graph-service:
+  html2pdf:
     build:
-      context: "./graph-service"
+      context: "./services/html2pdf"
     links:
       - nats
     depends_on:
