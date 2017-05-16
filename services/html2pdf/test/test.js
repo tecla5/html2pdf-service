@@ -1,27 +1,16 @@
 import test from 'ava';
+const Html2Pdf = require('../build/app')
 
-const YAML = require('yamljs')
-// ---
-const Trajson = require('../build/app/app')
+test.db('App', /* async */ t => {
+	console.log('testing: Html2Pdf')
 
+	var opts = {}
 
-test('App', /* async */ t => {
-	console.log('starting trajson')
+	const html2pdf = new Html2Pdf(opts)
 
-	var graph = require('./bm.json')
-	//console.log(graph)
-
-	//transform to json
-	var trajson = new Trajson(graph)
-
-	var services = trajson.transform()
-	console.log(JSON.stringify(services));
-
-	let servicesYaml = trajson.exportToYAML(services)
-	console.log(servicesYaml);
-
-
-	// const bar = Promise.resolve('bar');
-	// t.is(await bar, 'bar');
-	t.pass();
+	html2pdf.generate((res) => {
+		console.log('result:', res)
+		t.pass('generated')
+		t.end()
+	})
 });
